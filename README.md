@@ -2,7 +2,6 @@
 Write simple indexing application in your language of choice – Java/Python/C#/Javascript/etc... which will index simple csv file
 
 
-
 # Run it with suitable env
 
 ``` bash
@@ -13,7 +12,7 @@ docker-compose -f ./docker/docker-compose.yml up -d
 # Build docker image
 
 ## NB
-You can setup your own localfile, but not forget to mount it "-v"
+You can setup your own localfile, but do not forget to mount it with "-v" or add to the image
 
 As well as name of the index (default is "my-first-python-index")
 
