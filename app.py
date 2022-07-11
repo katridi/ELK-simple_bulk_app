@@ -12,9 +12,9 @@ def create_index(es: Elasticsearch, index_name: str):
 def write_file(es: Elasticsearch, index_name: str, path_to_file, sep=","):
     df = pd.read_csv(path_to_file, sep=sep)
     body = []
-    for i in df.index:
-        entry = df.loc[i].to_dict()
-        body.append({"index": {"_index": index_name, "_id": i}})
+    for index, row in df.iterrows():
+        entry = row.to_dict()
+        body.append({"index": {"_index": index_name, "_id": index}})
         body.append(entry)
 
     es.bulk(body=body)
